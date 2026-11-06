@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akta Perkawinan | Dukcapil</title>
+  <meta name="description" content="Dokumen akta perkawinan.">
+  <meta name="theme-color" content="#0b2545">
+  <link rel="shortcut icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#dokumen">Lewati ke dokumen</a>
+  <div class="state-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="shell masthead__inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Lambang Garuda Pancasila" width="198" height="255">
+        <div class="brand__text">
+          <p class="brand__ministry">Kementerian Dalam Negeri Republik Indonesia</p>
+          <p class="brand__name">Direktorat Jenderal Kependudukan dan Pencatatan Sipil</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" id="dokumen">
+    <div class="shell">
+      <article class="sheet" aria-labelledby="doc-title">
+        <header class="sheet__head">
+          <div>
+            <p class="kicker">Dokumen kependudukan</p>
+            <h1 id="doc-title">Akta Perkawinan</h1>
+          </div>
+          <p class="leaf">Lembar 1 dari 1</p>
+        </header>
+
+        <div class="status-row">
+          <span class="status-row__label">Status Dokumen</span>
+          <span class="status-row__value"><span class="status-dot" aria-hidden="true"></span> AKTIF</span>
+        </div>
+
+        <dl class="fields">
+          <div class="field">
+            <dt>Nama Suami</dt>
+            <dd>RIYAN WIDIANTO</dd>
+          </div>
+          <div class="field">
+            <dt>Nama Istri</dt>
+            <dd>LINDA OKTAVIA AMBARSANI</dd>
+          </div>
+          <div class="field">
+            <dt>Tanggal Kawin</dt>
+            <dd>11 Maret 2024</dd>
+          </div>
+          <div class="field">
+            <dt>Nomor Akta</dt>
+            <dd class="doc-number">3305-KW-11032024-0002</dd>
+          </div>
+        </dl>
+
+        <section class="block" aria-labelledby="penandatangan-title">
+          <h2 id="penandatangan-title">Informasi Penandatangan</h2>
+          <dl class="fields">
+            <div class="field">
+              <dt>Daerah</dt>
+              <dd>Personal</dd>
+            </div>
+            <div class="field">
+              <dt>Lembaga</dt>
+              <dd>-</dd>
+            </div>
+            <div class="field">
+              <dt>Penandatangan</dt>
+              <dd>DEWA GDE JULI ARTAWAN</dd>
+            </div>
+          </dl>
+        </section>
+
+        <div class="split">
+          <section class="block" aria-labelledby="pemindaian-title">
+            <h2 id="pemindaian-title">Informasi Pemindaian</h2>
+            <dl class="fields">
+              <div class="field">
+                <dt>Tanggal Pindai</dt>
+                <dd><time id="scan-date">Tidak tersedia</time></dd>
+              </div>
+              <div class="field">
+                <dt>Waktu Pindai</dt>
+                <dd><time id="scan-time">Tidak tersedia</time></dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="block" aria-labelledby="tanda-tangan-title">
+            <h2 id="tanda-tangan-title">Tanggal Penandatanganan</h2>
+            <dl class="fields">
+              <div class="field">
+                <dt>Tanggal</dt>
+                <dd><time datetime="2024-03-14">14 Maret 2024</time></dd>
+              </div>
+              <div class="field">
+                <dt>Waktu</dt>
+                <dd><time datetime="13:04:44">13:04:44</time></dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="page-foot">
+    <div class="shell">
+      <p>Kementerian Dalam Negeri Republik Indonesia</p>
+    </div>
+  </footer>
+
+  <script>
+    const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+      'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+    function updateScanTime() {
+      const now = new Date();
+      document.getElementById('scan-date').textContent =
+        now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+      document.getElementById('scan-time').textContent =
+        [now.getHours(), now.getMinutes(), now.getSeconds()]
+          .map(value => String(value).padStart(2, '0')).join(':');
+    }
+
+    updateScanTime();
+    setInterval(updateScanTime, 1000);
+  </script>
+</body>
+
+</html>
